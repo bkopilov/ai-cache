@@ -1,0 +1,18 @@
+[project]
+name = "ai-cache"
+version = "0.1.0"
+description = "Local vector cache of prior Q&A so AI agents can skip already-known answers and replay action recipes"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "chromadb>=1.0,<2",
+]
+
+[project.scripts]
+ai-cache = "ai_cache:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = ["ai_cache"]

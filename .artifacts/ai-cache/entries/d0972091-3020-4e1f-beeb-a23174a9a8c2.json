@@ -1,9 +1,0 @@
-{
-  "id": "d0972091-3020-4e1f-beeb-a23174a9a8c2",
-  "question": "How to make ai-cache work automatically in Cursor and Claude Code",
-  "answer": "install.sh auto-installs three layers: (1) skill at ~/.cursor/skills/ai-cache/SKILL.md and ~/.claude/skills/ai-cache/SKILL.md with query-before/save-after instructions, (2) global rules at ~/.cursor/rules/ai-cache.md and ~/.claude/CLAUDE.md, (3) Cursor stop hook at ~/.cursor/hooks/auto-cache.sh with loop_limit:1 that fires after each turn reminding the agent to save. All idempotent. No per-project setup needed.",
-  "source": "chat",
-  "tags": "ai-cache,setup,skill",
-  "created_at": "2026-08-23T09:01:59Z",
-  "actions": []
-}

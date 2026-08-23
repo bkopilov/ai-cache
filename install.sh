@@ -111,6 +111,26 @@ JSON
   fi
 fi
 
+# Install the ai-cache skill for Cursor and Claude Code
+SKILL_SRC="${DIR}/skill"
+if [ -d "${SKILL_SRC}" ]; then
+  # Cursor skill
+  CURSOR_SKILLS="${HOME}/.cursor/skills/ai-cache"
+  if [ -d "${HOME}/.cursor" ] || command -v cursor >/dev/null 2>&1; then
+    mkdir -p "${CURSOR_SKILLS}"
+    cp "${SKILL_SRC}/SKILL.md" "${CURSOR_SKILLS}/SKILL.md"
+    echo "  Installed Cursor skill at ${CURSOR_SKILLS}/SKILL.md"
+  fi
+
+  # Claude Code skill
+  CLAUDE_SKILLS="${HOME}/.claude/skills/ai-cache"
+  if [ -d "${HOME}/.claude" ] || command -v claude >/dev/null 2>&1; then
+    mkdir -p "${CLAUDE_SKILLS}"
+    cp "${SKILL_SRC}/SKILL.md" "${CLAUDE_SKILLS}/SKILL.md"
+    echo "  Installed Claude Code skill at ${CLAUDE_SKILLS}/SKILL.md"
+  fi
+fi
+
 echo ""
 echo "Installed. Next:"
 echo "  ai-cache doctor"

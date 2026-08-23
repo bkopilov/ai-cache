@@ -17,6 +17,11 @@ On **every** user question or task, before researching or writing code:
 ai-cache query "<question>"
 ```
 
+**Always notify the user** what happened:
+- Cache hit → tell the user: `[cache hit] Reusing cached answer (score: X.XX)`
+- Cache replay → tell the user: `[cache replay] Running cached recipe...`
+- Cache miss → tell the user: `[cache miss] Not cached — researching now...`
+
 Read the JSON output:
 
 - `known: true` + answer is enough → reuse `hits[0].answer`. **Stop.**
@@ -54,6 +59,8 @@ the recipe works on different machines:
 ```bash
 "command": "ssh {user}@{host} 'systemctl restart {service}'"
 ```
+
+When saving, **notify the user**: `[cached] Saved answer for: "<question>"`
 
 ### Skip saving when
 
